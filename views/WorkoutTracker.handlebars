@@ -1,0 +1,18 @@
+<div class="text-center">
+    <h2> Let's get better today, {{user}}</h2>
+</div>
+
+<h3> Here are your workouts for today.</h3>
+<div id="workout"></div>
+
+<script type="text/x-handlebars-template" id="WorkoutTable">
+    <table>
+    <thead>
+    <tr>
+        {{#each array.[0]}}
+        <th>{{@key}}</th>
+        {{/each}}
+    </tr>
+    </thead> 
+    </table>
+</script>

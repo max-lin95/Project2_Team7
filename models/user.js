@@ -1,4 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
+
+const sequelize = require('../config/connection');
+
+class Project extends Model {}
+
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -52,3 +57,4 @@ User.init(
 );
 
 module.exports = User;
+

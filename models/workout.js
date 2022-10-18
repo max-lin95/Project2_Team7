@@ -11,7 +11,7 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    workout: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

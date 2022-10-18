@@ -4,26 +4,14 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const workoutData = await Workout.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-
+    
     res.render('homepage', { 
-      workouts, 
+      // workouts, 
       logged_in: req.session.logged_in 
     });
-    // res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
-  // res.render('homepage');
 });
 
 // router.get('/WorkoutTracker/:id', withAuth, async (req, res) => {
@@ -49,15 +37,15 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-router.get('/profile', withAuth, async (req, res) => {
-    res.render('profile');
+// router.get('/profile', withAuth, async (req, res) => {
+//     res.render('profile');
   
-  });
+// });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    return res.redirect('/profile');
-    
+    res.redirect('/');
+    return;
   }
 
   res.render('login');

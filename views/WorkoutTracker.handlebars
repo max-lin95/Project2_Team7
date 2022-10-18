@@ -1,18 +1,19 @@
 <div class="text-center">
-    <h2> Let's get better today, {{user}}</h2>
+    <h1> Let's get better today, {{user}}</h1>
 </div>
 
-<h3> Here are your workouts for today.</h3>
-<div id="workout"></div>
+<h2> Check out your workout for today.Remember to practice safe sets and drink plenty of water!</h2>
 
-<script type="text/x-handlebars-template" id="WorkoutTable">
-    <table>
-    <thead>
-    <tr>
-        {{#each array.[0]}}
-        <th>{{@key}}</th>
-        {{/each}}
-    </tr>
-    </thead> 
-    </table>
-</script>
+{{!-- Workout List --}}
+<body> 
+    <h3> Today's Workout</h3>
+<ol>
+    {{#each workout as |workout|}}
+    <ul> 
+        <div class="exercise">
+            <a href="/profile/{{id}}"></a>
+        </div>
+</ol>
+
+
+

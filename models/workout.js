@@ -5,30 +5,45 @@ class Workout extends Model {}
 
 Workout.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    Workout: {
+    workout: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Sets: {
+    sets: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    Reps: {
+    reps: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Workout',
+    modelName: 'workout',
   }
 );
 

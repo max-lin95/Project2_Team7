@@ -1,18 +1,49 @@
-body{
-    background-image: url(/images/gym-background.jpeg);
-  }
+body {
+    background: url("/images/gym-background.jpeg"); #6DB3F2;
+    cursor: url("/images/muscle-cursor.png"), auto;
+}
   
-  .no-button {
+.no-button {
       background: none;
       border: none;
       padding: 0;
-      cursor: pointer;
+      cursor: url("/images/muscle-cursor.png"), auto;
       color: #1b89bc;
       text-decoration: none;
       font-size: 100%;
-    }
+}
     
-    .no-button:hover {
+.no-button:hover {
       color: #065b83;
       text-decoration: underline;
-    }
+}
+
+h1 {
+    text-align: center;
+    color:blue
+}
+
+.sets-reps {
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.gokuworkout {
+    float: center;
+}
+
+footer {
+    background-color: #fff;
+}
+
+nav h1 h2 a ul li {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 8x;
+    cursor: url("/images/muscle-cursor.png"), auto;
+}
+
+

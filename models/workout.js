@@ -24,7 +24,7 @@ Workout.init(
       allowNull: false,
     },
     days: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     program_id: {

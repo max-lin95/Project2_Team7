@@ -28,7 +28,7 @@ Program.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dish'
+    modelName: 'program'
   }
 );
 

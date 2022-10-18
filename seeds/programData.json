@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Naruto",
+        "description": "Unleash your inner ninja!",
+        "volume": "6+",
+        "program_id": 1
+    },
+    {
+        "name": "Goku",
+        "description": "Go Super Saiyan!",
+        "volume": "6",
+        "program_id": 2
+    },
+    {
+        "name": "Deku",
+        "description": "Become a Hero!",
+        "volume": "5+",
+        "program_id": 3
+    },
+]
+

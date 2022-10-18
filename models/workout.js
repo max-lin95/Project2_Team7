@@ -23,14 +23,14 @@ Workout.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    date: {
-      type: DataTypes.DATE,
+    days: {
+      type: DataTypes.ARRAY,
       allowNull: false,
     },
-    user_id: {
+    program_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'program',
         key: 'id',
       },
     },

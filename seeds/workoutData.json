@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Barbell Bench Press",
+        "sets": 5,
+        "reps": 5,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Seated DB Overhead Press",
+        "sets": 5,
+        "reps": 5,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Close Grip Bench",
+        "sets": 4,
+        "reps": 10,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Cable Front Raises",
+        "sets": 3,
+        "reps": 10,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Cable Chest Flyes",
+        "sets": 3,
+        "reps": 10,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Kettlebell Swings",
+        "sets": 5,
+        "reps": 25,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "One Arm DB Snatch (10 Each Arm)",
+        "sets": 5,
+        "reps": 20,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "Push Ups",
+        "sets": 5,
+        "reps": 15,
+        "days": "Monday",
+        "program_id": 3
+    },
+    {
+        "name": "10 Second Battle Ropes",
+        "sets": 5,
+        "reps": 1,
+        "days": "Monday",
+        "program_id": 3
+    },
+]

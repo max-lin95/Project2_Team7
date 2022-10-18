@@ -15,8 +15,8 @@ const seedDatabase = async () => {
   });
 
   for (const program of programData) {
-    await Project.create({
-      ..program,
+    await Program.create({
+      ...program,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }

@@ -23,21 +23,19 @@ Program.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-
+    img: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
-
-
-    img: {
-      type: DataTypes.STRING,
-      allowNull: true,
-
     },
   },
+  
   {
     sequelize,
     freezeTableName: true,

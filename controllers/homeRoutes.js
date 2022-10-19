@@ -5,7 +5,14 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all workout programs and JOIN with user data
-    const programData = await Program.findAll();
+    const programData = await Program.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name',],
+        },
+      ],
+    });
 
     // Serialize data so the template can read it
     const programs = programData.map((program) => program.get({ plain: true }));
@@ -19,35 +26,64 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+
 router.get('/program/:id', withAuth, async (req, res) => {
+    try {
+        const programData = await Program.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
 
-  try {
-    const programData = await Program.findByPk(req.params.id, {
-      include: [
+        const exercise = programData.get({plain: true});
 
-    const workoutData = await workout.findByPk(req.params.id, {
-      where: [
-
-        {
-          day: Monday,
-        },
-      ],
-    });
-
-
-    const workout = programData.get({ plain: true });
-
-    const workout = workoutData.get({ plain: true });
-
-
-    res.render('program', {
-      ...workout,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+        res.render('program', {
+            ...exercise,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
+
+
+
+
+
+
+// router.get('/program/:id', withAuth, async (req, res) => {
+
+//   try {
+//     const programData = await Program.findByPk(req.params.id, {
+//       include: [
+
+//     const workoutData = await workout.findByPk(req.params.id, {
+//       where: [
+
+//         {
+//           day: Monday,
+//         },
+//       ],
+//     });
+
+
+//     const workout = programData.get({ plain: true });
+
+//     const workout = workoutData.get({ plain: true });
+
+
+//     res.render('program', {
+//       ...workout,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/profile', withAuth, async (req, res) => {
   try {

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Profile extends Model {}
 
-Project.init(
+Profile.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,34 +17,42 @@ Project.init(
     },
     username: {
       type: DataTypes.STRING,
-      allownNull: false,
+      allowNull: false,
     },
     country: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     city: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     state: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     address: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     bio: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     gender: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     birthday: {
-        type: DataTypes.STRING,
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     height: {
-        type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     weight: {
-        type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -59,8 +67,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'profile',
   }
 );
 
-module.exports = Project;
+module.exports = Profile;

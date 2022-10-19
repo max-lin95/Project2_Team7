@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
 
 
   if (name && username && country && city && state && address && bio && gender && birthday && height && weight) {
-    const response = await fetch(`/api/program`, {
+    const response = await fetch(`/api/programs`, {
       method: 'POST',
       body: JSON.stringify({ name, username, country, city, state, address, bio, gender, birthday, height, weight }),
       headers: {

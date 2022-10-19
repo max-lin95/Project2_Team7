@@ -24,6 +24,19 @@ h1 {
     color:blue
 }
 
+.front-image{
+    height: 350px;
+    width: 350px;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.hero-name {
+    align-items: center;
+    font-style: "Roboto", sans-serif;
+    color: rgb(0, 46, 172);
+}
 
 .sets-reps {
     margin-bottom: 10px;

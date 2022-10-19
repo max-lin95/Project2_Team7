@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, BLOB } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Program extends Model {}
@@ -22,6 +22,11 @@ Program.init(
     volume: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+
+    img: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

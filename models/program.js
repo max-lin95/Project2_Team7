@@ -11,7 +11,7 @@ Program.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    program_name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },

@@ -36,7 +36,7 @@ Workout.init(
     },
     completed: {
       type: DataTypes.BOOLEAN,
-      
+      default: false
     }
   },
   {

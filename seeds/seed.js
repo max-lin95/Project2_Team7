@@ -14,13 +14,14 @@ const seedDatabase = async () => {
   });
 
   for (const program of programData) {
-    await Program.create(programData);
+    await Program.create({
+      ...program,
+    });
   }
 
   for (const workout of workoutData) {
     await Workout.create({
       ...workout,
-      completed: false,
     });
   }
 

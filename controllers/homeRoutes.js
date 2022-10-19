@@ -6,12 +6,12 @@ router.get('/', async (req, res) => {
   try {
     // Get all workout programs and JOIN with user data
     const programData = await Program.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
     });
 
     // Serialize data so the template can read it
@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/prgram/:id', withAuth, async (req, res) => {
+router.get('/program/:id', withAuth, async (req, res) => {
 
   try {
     const programData = await program.findByPk(req.params.id, {

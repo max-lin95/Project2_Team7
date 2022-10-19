@@ -9,7 +9,7 @@ Program.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
     },
     program_name: {
         type: DataTypes.STRING,
@@ -17,11 +17,11 @@ Program.init(
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: true
+        allowNull: true,
     },
     volume: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
     },
   },
   {

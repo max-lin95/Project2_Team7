@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
     const needed_funding = document.querySelector('#project-funding').value.trim();
     const description = document.querySelector('#project-desc').value.trim();
   
-    if (name && needed_funding && description) {
+    if (name && username && country && city && state && address && bio && gender && birthday && height && weight) {
       const response = await fetch(`/api/projects`, {
         method: 'POST',
         body: JSON.stringify({ name, needed_funding, description }),
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create project');
+        alert('Failed to make changes');
       }
     }
   };
@@ -27,13 +27,13 @@ const newFormHandler = async (event) => {
       const id = event.target.getAttribute('data-id');
   
       const response = await fetch(`/api/projects/${id}`, {
-        method: 'DELETE',
+        method: 'Update',
       });
   
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to make updates');
       }
     }
   };

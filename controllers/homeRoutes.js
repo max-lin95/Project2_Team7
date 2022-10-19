@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Program, User } = require('../models');
+const { Program, User, Workout } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -24,14 +24,21 @@ router.get('/program/:id', withAuth, async (req, res) => {
   try {
     const programData = await Program.findByPk(req.params.id, {
       include: [
+
+    const workoutData = await workout.findByPk(req.params.id, {
+      where: [
+
         {
-          model: User,
-          attributes: ['name'],
+          day: Monday,
         },
       ],
     });
 
+
     const workout = programData.get({ plain: true });
+
+    const workout = workoutData.get({ plain: true });
+
 
     res.render('program', {
       ...workout,

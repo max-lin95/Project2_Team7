@@ -1,22 +1,17 @@
 const router = require('express').Router();
-const { Workout } = require('../models');
+const { Program, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const workoutData = await Workout.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // Get all workout programs and JOIN with user data
+    const programData = await Program.findAll();
 
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+    // Serialize data so the template can read it
+    const programs = programData.map((program) => program.get({ plain: true }));
 
     res.render('homepage', { 
-      workouts, 
+      programs, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -24,9 +19,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/WorkoutTracker/:id', async (req, res) => {
+router.get('/program/:id', withAuth, async (req, res) => {
+
   try {
-    const workoutData = await Workout.findByPk(req.params.id, {
+    const programData = await program.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -35,10 +31,10 @@ router.get('/WorkoutTracker/:id', async (req, res) => {
       ],
     });
 
-    const workout = workoutData.get({ plain: true });
+    const program = programData.get({ plain: true });
 
-    res.render('workout', {
-      ...workout,
+    res.render('program', {
+      ...program,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -46,27 +42,28 @@ router.get('/WorkoutTracker/:id', async (req, res) => {
   }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Workout }],
-    });
+// router.get('/profile', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Program }],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('profile', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 

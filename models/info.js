@@ -35,16 +35,16 @@ Project.init(
         type: DataTypes.STRING,
     },
     gender: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
     birthday: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
     height: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
     weight: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,

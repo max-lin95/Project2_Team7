@@ -40,5 +40,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening....'));
+  app.listen(PORT, () => console.log(`Now listening to port ${PORT}...`));
 });
+
+// Change default view engine to Handlebars
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+// Where the images are stored
+app.use(express.static("images"));
+
+// Route to display static src images to homepage
+app.get("/homepage", (req, res) => {
+	res.render("homepage");
+});
+
+
+

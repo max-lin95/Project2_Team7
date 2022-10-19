@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>Anime Workout</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -12,12 +12,13 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
+
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        <img src="goku-workout.jpg" class="gokuworkout" alt="Goku" style="height:200px;width:400px;">
+        <a href="/">Get that anime bod you've always wanted!</a>
       </h1>
+
       <nav>
-        <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
@@ -25,47 +26,23 @@
         <a href="/login">login</a>
         {{/if}}
       </nav>
+      
     </header>
+
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+
     <footer>
-      
+      <p>By: Team 7</p>
     </footer>
-  </div>
+  </div> 
 
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Workout</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-
-<body>
-  <header>
-    <h1>Welcome to the Anime Workout Guide</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>Get that Anime bod you always wanted!</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+  {{!-- <div class="cursor"></div> --}}
 </body>
 
 </html>

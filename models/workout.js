@@ -1,28 +1,43 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class workout extends Model {}
+class Workout extends Model {}
 
-workout.init(
+Workout.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    Workout: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Sets: {
+    sets: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    Reps: {
+    reps: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    days: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    program_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'program',
+        key: 'id',
+      },
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      default: false
+    }
   },
   {
     sequelize,
@@ -32,4 +47,4 @@ workout.init(
   }
 );
 
-module.exports = workout;
+module.exports = Workout;

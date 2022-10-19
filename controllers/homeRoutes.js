@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     const workoutData = await Workout.findAll({
       include: [
         {
-          model: Program,
+          model: User,
           attributes: ['name'],
         },
       ],
@@ -46,10 +46,10 @@ router.get('/program/:id', withAuth, async (req, res) => {
             ],
         });
 
-        const workoutData = await Workout.findByPk(req.params.id, {
+        const workoutData = await Workout.findAll({
           include: [
               {
-                  model: Program,
+                  model: User,
                   attributes: ['name'],
               },
           ],
@@ -60,12 +60,14 @@ router.get('/program/:id', withAuth, async (req, res) => {
           include: [{ model: Program }],
       });
   
+        const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
         const user = userData.get({ plain: true });
         const exercise = programData.get({plain: true});
-        const workout = workoutData.get({plain: true});
+        // const workout = workoutData.get({plain: true});
 
         res.render('program', {
-            ...exercise, ...workout, ...user,
+            workouts, ...exercise, ...user,
             logged_in: req.session.logged_in
         });
     } catch (err) {

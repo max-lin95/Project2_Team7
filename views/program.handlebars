@@ -5,15 +5,16 @@
 <div class="col-md-6 workout-list"> 
     <h3> Today's Workout: </h3>
 
+{{!-- workouts/workout are from homeroutes --}}
     {{#each workouts as |workout|}}  
     <div class="col-mdb-2">
-     <li>
+     <ul>
     <p>{{workout.name}}</p>
     <p>{{workout.sets}}</p>
     <p>{{workout.reps}}</p>
     <p>{{workout.days}}</p>
     {{!-- <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">FINISHED</button> --}}
-    </li> 
+    </ul> 
     </div>
     {{/each}}
 </div>

@@ -1,10 +1,28 @@
 const router = require('express').Router();
-const { Workout, User } = require('../models');
+const { Program, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const workoutData = await Workout.findAll({
+    // Get all workout programs and JOIN with user data
+    const programData = await Program.findAll();
+
+    // Serialize data so the template can read it
+    const programs = programData.map((program) => program.get({ plain: true }));
+
+    res.render('homepage', { 
+      programs, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/program/:id', withAuth, async (req, res) => {
+
+  try {
+    const programData = await program.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -13,51 +31,40 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+    const program = programData.get({ plain: true });
 
-    res.render('homepage', { 
-      workouts, 
-      logged_in: req.session.logged_in 
+    res.render('program', {
+      ...program,
+      logged_in: req.session.logged_in
     });
-    // res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
-  // res.render('homepage');
 });
 
-// router.get('/WorkoutTracker/:id', withAuth, async (req, res) => {
-
+// router.get('/profile', withAuth, async (req, res) => {
 //   try {
-//     const workoutData = await Workout.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Program }],
 //     });
 
-//     const workout = workoutData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-//     res.render('workout', {
-//       ...workout,
-//       logged_in: req.session.logged_in
+//     res.render('profile', {
+//       ...user,
+//       logged_in: true
 //     });
 //   } catch (err) {
 //     res.status(500).json(err);
 //   }
 // });
 
-router.get('/profile', withAuth, async (req, res) => {
-    res.render('profile');
-  
-  });
-
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    return res.redirect('/profile');
-    
+    res.redirect('/');
+    return;
   }
 
   res.render('login');

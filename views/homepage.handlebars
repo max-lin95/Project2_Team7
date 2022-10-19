@@ -1,20 +1,16 @@
-<!-- Loop over each object in the projects array -->
-{{#each workout as |workout| }}
+{{#each programs as |program| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/workout/{{workout.ID}}">{{workout.Workout}}</a>
+      {{!-- {{{get_emoji}}} --}}
+      <a href="/program/{{program.id}}">{{program.name}}</a>
     </h2>
+      </div>
+  <div class="col-md-7">
     <p>
-      <span for="img" aria-label="weight">🏋️</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <ul class="sets-reps">
-        <li>{{workout.Sets}}</li>
-        <li>{{workout.Reps}}</li>  
-      </ul>
-    </p> 
+      {{program.description}}
+    </p>
   </div>
 </div>
 {{/each}}

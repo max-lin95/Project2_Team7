@@ -11,7 +11,7 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    workout: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,20 +23,20 @@ Workout.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    date: {
-      type: DataTypes.DATE,
+    days: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    program_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'program',
         key: 'id',
       },
     },
     completed: {
       type: DataTypes.BOOLEAN,
-      
+      default: false
     }
   },
   {

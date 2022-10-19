@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, BLOB } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Program extends Model {}
@@ -23,12 +23,19 @@ Program.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
+
+
+    img: {
+      type: DataTypes.STRING,
+      allowNull: true,
+
     },
   },
   {

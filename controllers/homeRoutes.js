@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Program, User } = require('../models');
+const { Program, User, Workout } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -22,19 +22,18 @@ router.get('/', async (req, res) => {
 router.get('/program/:id', withAuth, async (req, res) => {
 
   try {
-    const programData = await program.findByPk(req.params.id, {
-      include: [
+    const workoutData = await workout.findByPk(req.params.id, {
+      where: [
         {
-          model: User,
-          attributes: ['name'],
+          day: Monday,
         },
       ],
     });
 
-    const program = programData.get({ plain: true });
+    const workout = workoutData.get({ plain: true });
 
     res.render('program', {
-      ...program,
+      ...workout,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -44,7 +43,6 @@ router.get('/program/:id', withAuth, async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Program }],
@@ -60,8 +58,6 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {

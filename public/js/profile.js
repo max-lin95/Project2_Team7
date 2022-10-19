@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
     const description = document.querySelector('#program-desc').value.trim();
   
     if (name && volume && description) {
-      const response = await fetch(`/api/programss`, {
+      const response = await fetch(`/api/programs`, {
         method: 'POST',
         body: JSON.stringify({ name, volume, description }),
         headers: {
@@ -26,7 +26,7 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/programss/${id}`, {
+      const response = await fetch(`/api/programs/${id}`, {
         method: 'DELETE',
       });
   

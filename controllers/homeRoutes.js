@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.get('/program/:id', withAuth, async (req, res) => {
 
   try {
-    const programData = await program.findByPk(req.params.id, {
+    const programData = await Program.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -31,10 +31,10 @@ router.get('/program/:id', withAuth, async (req, res) => {
       ],
     });
 
-    const program = programData.get({ plain: true });
+    const exercise = programData.get({ plain: true });
 
     res.render('program', {
-      ...program,
+      ...exercise,
       logged_in: req.session.logged_in
     });
   } catch (err) {

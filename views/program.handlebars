@@ -4,26 +4,20 @@
 
 {{#if workout.length}}
 <div class="col-md-6 workout-list"> 
-    <h4> Today's Workout: </h4>
+    <h3> Today's Workout: </h3>
 
     {{#each workout as |workout|}}
     <div class="col-mdb-2">
-    <h5><a href="/workoutdata/{{workoutdata.id}},{{workoutdata.name}},{{workoutdata.sets}},{{workoutdata.reps}},{{workoutdata.rpe}}"></a></h5>
+    <p>{{days}}</p>
+    <p>{{name}}</p>
+    <p>{{sets}}</p>
+    <p>{{reps}}</p>
     <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">FINISHED</button>
     </div>
     {{/each}}
 {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
-{{!-- <ol>
-    {{#each workout as |workout|}}
-    <ul>
-        <div class = "exercise">
-        <a href="/seeds/workoutData.js"></a>
-        </div>
-        <button type="button" class="checkmark-record-btn>"></button>
-    </ul>
-    {{/each}}
-</ol> --}}
 </section>
+<script src="./js/profile.js"></script>
+

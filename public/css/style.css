@@ -1,13 +1,14 @@
 body {
-    background: url("/images/gym-background.jpeg"); #6DB3F2;
-    cursor: url("/images/muscle-cursor.png"), auto;
+    background: url("/images/gym-background.jpeg");
+    background-color:#6DB3F2;
+    cursor: url("/images/muscle-cursor.jpg"), auto;
 }
   
 .no-button {
       background: none;
       border: none;
       padding: 0;
-      cursor: url("/images/muscle-cursor.png"), auto;
+      cursor: url("/images/muscle-cursor.jpg"), auto;
       color: #1b89bc;
       text-decoration: none;
       font-size: 100%;
@@ -22,6 +23,7 @@ h1 {
     text-align: center;
     color:blue
 }
+
 
 .sets-reps {
     margin-bottom: 10px;
@@ -43,7 +45,7 @@ nav h1 h2 a ul li {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 8x;
-    cursor: url("/images/muscle-cursor.png"), auto;
+    cursor: url("/images/muscle-cursor.jpg"), auto;
 }
 
 .container {

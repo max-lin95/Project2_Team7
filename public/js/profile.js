@@ -1,14 +1,23 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#info-name').value.trim();
+  const username = document.querySelector('#info-username').value.trim();
+  const country = document.querySelector('#info-country').value.trim();
+  const city = document.querySelector('#info-city').value.trim();
+  const state = document.querySelector('#info-state').value.trim();
+  const address = document.querySelector('#info-address').value.trim();
+  const bio = document.querySelector('#info-bio').value.trim();
+  const gender = document.querySelector('#info-gender').value.trim();
+  const birthday = document.querySelector('#info-birthday').value.trim();
+  const height = document.querySelector('#info-height').value.trim();
+  const weight = document.querySelector('#info-weight').value.trim();
+
 
   if (name && username && country && city && state && address && bio && gender && birthday && height && weight) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, username, country, city, state, address, bio, gender, birthday, height, weight }),
       headers: {
         'Content-Type': 'application/json',
       },

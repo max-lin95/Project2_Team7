@@ -9,6 +9,18 @@
     {{#each workout as |workout|}}
     <div class="col-mdb-2">
     <h5><a href="/workoutdata/{{workoutdata.id}},{{workoutdata.name}},{{workoutdata.sets}},{{workoutdata.reps}},{{workoutdata.rpe}}"></a></h5>
+
+
+{{#if workout.length}}
+<div class="col-md-6 workout-list"> 
+    <h3> Today's Workout: </h3>
+
+    {{#each workout as |workout|}}
+    <div class="col-mdb-2">
+    <p>{{days}}</p>
+    <p>{{name}}</p>
+    <p>{{sets}}</p>
+    <p>{{reps}}</p>
     <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">FINISHED</button>
     </div>
     {{/each}}
@@ -29,6 +41,12 @@
 </section>
 
 <div class="container">
+
+
+</section>
+
+{{!-- Potential use for a calendar --}}
+{{!-- <div class="container">
     <div class="calendar">
         <div class="month">
             <i class="fas fa-angle-left prev"></i>
@@ -52,3 +70,4 @@
 </div>
 
 <script src="./js/calendar.js"></script>
+<script src="./js/calendar.js"></script> --}}

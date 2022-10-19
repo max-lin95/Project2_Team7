@@ -2,17 +2,20 @@
     {
         "name": "Naruto",
         "description": "Unleash your inner ninja!",
-        "volume": "6+"
+        "volume": "6+",
+        "img": "naruto.jpg"
     },
     {
         "name": "Goku",
         "description": "Go Super Saiyan!",
-        "volume": "6"
+        "volume": "6",
+        "img": "goku.jpg"
     },
     {
         "name": "Deku",
         "description": "Become a Hero!",
-        "volume": "5+"
+        "volume": "5+",
+        "img": "deku.jpg"
     }
 ]
 

@@ -4,15 +4,6 @@
 
 {{#if workout.length}}
 <div class="col-md-6 workout-list"> 
-    <h4> Today's Workout: </h4>
-
-    {{#each workout as |workout|}}
-    <div class="col-mdb-2">
-    <h5><a href="/workoutdata/{{workoutdata.id}},{{workoutdata.name}},{{workoutdata.sets}},{{workoutdata.reps}},{{workoutdata.rpe}}"></a></h5>
-
-
-{{#if workout.length}}
-<div class="col-md-6 workout-list"> 
     <h3> Today's Workout: </h3>
 
     {{#each workout as |workout|}}
@@ -27,47 +18,6 @@
 {{/if}}
 </div>
 
+</section>
 <script src="./js/profile.js"></script>
-{{!-- <ol>
-    {{#each workout as |workout|}}
-    <ul>
-        <div class = "exercise">
-        <a href="/seeds/workoutData.js"></a>
-        </div>
-        <button type="button" class="checkmark-record-btn>"></button>
-    </ul>
-    {{/each}}
-</ol> --}}
-</section>
 
-<div class="container">
-
-
-</section>
-
-{{!-- Potential use for a calendar --}}
-{{!-- <div class="container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1></h1>
-                <p></p>
-            </div>
-            <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="days"></div>
-    </div>
-</div>
-
-<script src="./js/calendar.js"></script>
-<script src="./js/calendar.js"></script> --}}

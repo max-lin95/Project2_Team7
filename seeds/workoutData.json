@@ -61,5 +61,105 @@
         "reps": 1,
         "days": "Monday",
         "program_id": 3
-    }
+    },
+    {
+        "name": "Push Ups",
+        "sets": 3,
+        "reps": 25,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Air Squats",
+        "sets": 3,
+        "reps": 20,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Dips",
+        "sets": 3,
+        "reps": 15,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Pull Ups",
+        "sets": 3,
+        "reps": 10,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Push Ups",
+        "sets": 3,
+        "reps": 20,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Triangle Push Ups",
+        "sets": 3,
+        "reps": 15,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Wide Push Ups",
+        "sets": 3,
+        "reps": 20,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Clap or Off The Ground Push Ups",
+        "sets": 3,
+        "reps": 10,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "20 Second Straight Arm Plank",
+        "sets": 3,
+        "reps": 1,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Burpees",
+        "sets": 3,
+        "reps": 5,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Sit Ups",
+        "sets": 3,
+        "reps": 25,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Lying Leg Raises",
+        "sets": 3,
+        "reps": 25,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "Flutter Kicks",
+        "sets": 3,
+        "reps": 25,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    {
+        "name": "25 Second Plank",
+        "sets": 3,
+        "reps": 1,
+        "days": "Tuesday",
+        "program_id": 3
+    },
+    
+
 ]

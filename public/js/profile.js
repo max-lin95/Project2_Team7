@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
 
 
   if (name && username && country && city && state && address && bio && gender && birthday && height && weight) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/program`, {
       method: 'POST',
       body: JSON.stringify({ name, username, country, city, state, address, bio, gender, birthday, height, weight }),
       headers: {
@@ -35,7 +35,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/program/${id}`, {
       method: 'Update',
     });
 
@@ -52,5 +52,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.program-list')
   .addEventListener('click', delButtonHandler);

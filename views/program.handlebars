@@ -1,0 +1,49 @@
+<section>
+        <h2> Here are your workouts for today, {{user}}. Remember to practice safe sets,hydrate, and do your daily cardio!</h2>
+
+
+{{#if workout.length}}
+<div class="col-md-6 workout-list"> 
+    <h3> Today's Workout: </h3>
+
+    {{#each workout as |workout|}}
+    <div class="col-mdb-2">
+    <p>{{days}}</p>
+    <p>{{name}}</p>
+    <p>{{sets}}</p>
+    <p>{{reps}}</p>
+    <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">FINISHED</button>
+    </div>
+    {{/each}}
+{{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
+
+</section>
+
+{{!-- Potential use for a calendar --}}
+{{!-- <div class="container">
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="days"></div>
+    </div>
+</div>
+
+<script src="./js/calendar.js"></script> --}}

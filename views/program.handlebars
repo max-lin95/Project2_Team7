@@ -1,24 +1,22 @@
-<section>
-        <h2> Here are your workouts for today, {{name}}. Remember to practice safe sets,hydrate, and do your daily cardio!</h2>
-        <h3>RPE stands for "Rate of Perceived Exertion". Meaning anything below 6 should feel like a warmup.</h3> 
+<div class="text-center"> Here are your workouts for today, {{name}}. Remember to practice safe sets,hydrate, and do your daily cardio!</div>
 
-<div class="col-md-6 workout-list"> 
+
     <h3> Today's Workout: </h3>
 
 {{!-- workouts/workout are from homeroutes --}}
     {{#each workouts as |workout|}}  
-    <div class="col-mdb-2">
+    <div class="exercise">
      <ul>
     <p>{{workout.name}}</p>
     <p>{{workout.sets}}</p>
     <p>{{workout.reps}}</p>
     <p>{{workout.days}}</p>
-    {{!-- <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">FINISHED</button> --}}
+
     </ul> 
     </div>
     {{/each}}
 </div>
 
 </section>
-{{!-- <script src="./js/profile.js"></script> --}}
+
 

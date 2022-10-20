@@ -7,12 +7,22 @@ User.hasOne(Program, {
   onDelete: 'CASCADE'
 });
 
+User.hasOne(Workout, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
 Program.hasMany(User, {
   foreignKey: 'program_id',
   onDelete: 'CASCADE'
 });
 
 Program.hasMany(Workout, {
+  foreignKey: 'program_id',
+  onDelete: 'CASCADE'
+});
+
+Workout.hasMany(User, {
   foreignKey: 'program_id',
   onDelete: 'CASCADE'
 });
